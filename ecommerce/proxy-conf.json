@@ -1,0 +1,6 @@
+{
+    "/api": {
+        "target": "https://fathomless-badlands-60705.herokuapp.com",
+        "secure": false
+    }
+}

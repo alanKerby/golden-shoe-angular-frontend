@@ -1,0 +1,31 @@
+<app-header [cartNum]="cart"></app-header>
+<div class="row" *ngIf="singleProduct">
+    <div class="col-lg-4 col-md-12 text-black text-center">
+        <div>
+            <br>
+            <h2>{{singleProduct.name}}</h2>
+            <h3>£{{singleProduct.price}}</h3>
+        </div>
+        <br>
+        <br>
+        <div class="order-md-2">
+            <h4 class="text-primary">Select Size</h4>
+            <div>
+                <button type="button" class="btn btn-sm btn-light mb-1 mr-1">5</button>
+                <button type="button" class="btn btn-sm btn-light mb-1 mr-1">6</button>
+                <button type="button" class="btn btn-sm btn-light mb-1 mr-1">7</button>
+                <button type="button" class="btn btn-sm btn-light mb-1 mr-1">8</button>
+                <button type="button" class="btn btn-sm btn-light mb-1 mr-1">9</button>
+                <button type="button" class="btn btn-sm btn-light mb-1 mr-1">10</button>
+            </div>
+        </div>
+        <br>
+        <br>
+        <button class="btn btn-primary" (click)="addToCart()"
+                [disabled]="singleProduct.stock <= 0">{{cartButtonSelector(singleProduct)}}
+        </button>
+    </div>
+    <div class="col-lg-8 col-md-12 order-md-1">
+        <a href="#"><img class="img-fluid" src={{singleProduct.pictureUrl}} alt=""></a>
+    </div>
+</div>
